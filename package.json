@@ -1,14 +1,13 @@
-async function directDownload() {
-  if(!currentVideoId) { showToast('Get video info first!'); return; }
-  
-  // Open multiple download options
-  var url = 'https://www.youtube.com/watch?v=' + currentVideoId;
-  var services = [
-    { name: 'Loader.to', url: 'https://loader.to/?' + encodeURIComponent(url) },
-    { name: '9xBuddy', url: 'https://9xbuddy.com/process?url=' + encodeURIComponent(url) }
-  ];
-  
-  // Open first service
-  window.open(services[0].url, '_blank');
-  showToast('Opening download page...');
+{
+  "name": "tubeget-api",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "postinstall": "pip3 install yt-dlp || pip install yt-dlp || true"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5"
+  }
 }
